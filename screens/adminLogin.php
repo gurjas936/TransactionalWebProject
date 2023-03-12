@@ -21,19 +21,20 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Add Customer</title>
 
-    <style>body {
+<style>
+    body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     background: linear-gradient(to right, #b92b27, #1565c0)
-}
+    }
 
-.card{
+  .card{
     margin-bottom:20px;
     border:none;
-}
+  }
 
-.box {
+  .box {
     width: 500px;
     padding: 40px;
     position: absolute;
@@ -44,10 +45,10 @@
     text-align: center;
     transition: 0.25s;
     margin-top: 100px
-}
+  }
 
-.box input[type="text"],
-.box input[type="password"] {
+  .box input[type="text"],
+  .box input[type="password"] {
     border: 0;
     background: none;
     display: block;
@@ -60,21 +61,21 @@
     color: white;
     border-radius: 24px;
     transition: 0.25s
-}
+  }
 
-.box h1 {
+  .box h1 {
     color: white;
     text-transform: uppercase;
     font-weight: 500
-}
+  }
 
-.box input[type="text"]:focus,
-.box input[type="password"]:focus {
+  .box input[type="text"]:focus,
+  .box input[type="password"]:focus {
     width: 300px;
     border-color: #2ecc71
-}
+  }
 
-.box input[type="submit"] {
+  .box input[type="submit"] {
     border: 0;
     background: none;
     display: block;
@@ -87,52 +88,52 @@
     border-radius: 24px;
     transition: 0.25s;
     cursor: pointer
-}
+  }
 
-.box input[type="submit"]:hover {
+  .box input[type="submit"]:hover {
     background: #2ecc71
-}
+  }
 
-.forgot {
+  .forgot {
     text-decoration: underline
-}
+  }
 
-ul.social-network {
+  ul.social-network {
     list-style: none;
     display: inline;
     margin-left: 0 !important;
     padding: 0
-}
+  }
 
-ul.social-network li {
+  ul.social-network li {
     display: inline;
     margin: 0 5px
-}
+  }
 
-.social-network a.icoFacebook:hover {
+  .social-network a.icoFacebook:hover {
     background-color: #3B5998
-}
+  }
 
-.social-network a.icoTwitter:hover {
+  .social-network a.icoTwitter:hover {
     background-color: #33ccff
-}
+  }
 
-.social-network a.icoGoogle:hover {
+  .social-network a.icoGoogle:hover {
     background-color: #BD3518
-}
+  }
 
-.social-network a.icoFacebook:hover i,
-.social-network a.icoTwitter:hover i,
-.social-network a.icoGoogle:hover i {
+  .social-network a.icoFacebook:hover i,
+  .social-network a.icoTwitter:hover i,
+  .social-network a.icoGoogle:hover i {
     color: #fff
-}
+  }
 
-a.socialIcon:hover,
-.socialHoverClass {
+  a.socialIcon:hover,
+  .socialHoverClass {
     color: #44BCDD
-}
+  }
 
-.social-circle li a {
+  .social-circle li a {
     display: inline-block;
     position: relative;
     margin: 0 auto 0 auto;
@@ -141,26 +142,26 @@ a.socialIcon:hover,
     width: 50px;
     height: 50px;
     font-size: 20px
-}
+  }
 
-.social-circle li i {
+  .social-circle li i {
     margin: 0;
     line-height: 50px;
     text-align: center
-}
+  }
 
-.social-circle li a:hover i,
-.triggeredHover {
+  .social-circle li a:hover i,
+  .triggeredHover {
     transform: rotate(360deg);
     transition: all 0.2s
-}
+    }
 
-.social-circle i {
+    .social-circle i {
     color: #fff;
     transition: all 0.8s;
     transition: all 0.8s
-}
-    </style>
+  }
+</style>
 </head>
 <body><div class="container">
    <div class="row">
@@ -172,7 +173,7 @@ a.socialIcon:hover,
            <input type="text" name="username" placeholder="Username">
            <input type="password" name="password" placeholder="Password">
            <a class="forgot text-muted" href="#">Forgot password?</a>
-           <input type="submit" name="submit" value="Login">
+           <input type="submit" name="submit" value="Login" href=>
            <div class="col-md-12"> <ul class="social-network social-circle">
              <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
              <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
