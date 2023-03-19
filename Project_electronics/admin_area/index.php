@@ -8,7 +8,15 @@
     <!--bootstrap css link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-<!--css file--> 
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO@HhonpyAIVpjrylPvoDwi PUiKdWk5t3PyolY1c0d4
+    DSEØGa+ri4Au TroPR5aQvXU9xC6q0PnzFeg==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"/>
+
+
+<!--css file-->
 
 <link rel="stylesheet" href="../style.css">
 <style>
@@ -40,11 +48,11 @@
 
              </nav>
 
-             
+
 
         </div>
     </nav>
-    <!--second child--> 
+    <!--second child-->
     <div class="bg-light">
                 <h3 class="text-center p-2">Manage Details</h3>
              </div>
@@ -65,9 +73,9 @@
 
               <button class="my-3"><a href="" class="nav-link text-light bg-info my-1">Insert Products</a></button>
               <button><a href="" class="nav-link text-light bg-info my-1">View Products</a></button>
-              <button><a href="" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
+              <button><a href="index.php?insert_category" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
               <button><a href="" class="nav-link text-light bg-info my-1">View Categories</a></button>
-              <button><a href="" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
+              <button><a href="index.php?insert_brands" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
               <button><a href="" class="nav-link text-light bg-info my-1">View Brands</a></button>
               <button><a href="" class="nav-link text-light bg-info my-1">All Orders</a></button>
               <button><a href="" class="nav-link text-light bg-info my-1">All Payments</a></button>
@@ -76,6 +84,20 @@
             </div>
         </div>
      </div>
+
+
+
+     <div class="container">
+       <?php
+        if(isset($_GET['insert_category'])){
+          include('insert_categories.php');
+        }
+
+        if(isset($_GET['insert_brands'])){
+          include('insert_brands.php');
+        }
+      ?>
+    </div>
      <!--last child-->
 <div class="bg-info p-3 text-center footer">
     <p>

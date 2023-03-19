@@ -1,4 +1,22 @@
+<?php
+include('./models/admin.php');
 
+$name = $_GET["name"];
+
+ ?>
+
+<!--second child-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <ul class="navbar-nav me-auto">
+
+    <li class="nav-item">
+          <a class="nav-link" href="#">Welcome <b><?php echo $name ?></b></a>
+    </li>
+    <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+    </li> -->
+  </ul>
+</nav>
 
 <!--third child-->
 <div class="bg-light">
@@ -90,21 +108,16 @@
   <li class="nav-item bg-info">
     <a href="#" class="nav-link text-light"><h4>Delivery Brands</h4></a>
   </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Brand1</a>
-  </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Brand2</a>
-  </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Brand3</a>
-  </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Brand4</a>
-  </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Brand5</a>
-  </li>
+
+       <div class="container">
+         <?php
+         $adminObj = new Admin();
+
+            $adminObj->displayBrands();
+
+        ?>
+      </div>
+
 </ul>
 
 <!--categories-->
@@ -113,21 +126,16 @@
   <li class="nav-item bg-info">
     <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
   </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Category1</a>
-  </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Category2</a>
-  </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Category3</a>
-  </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Category4</a>
-  </li>
-  <li class="nav-item ">
-    <a href="#" class="nav-link text-light">Category5</a>
-  </li>
+
+
+  <div class="container">
+    <?php
+    $adminObj = new Admin();
+
+       $adminObj->displayCategories();
+
+   ?>
+ </div>
 </ul>
 
 
