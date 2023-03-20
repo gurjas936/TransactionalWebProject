@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2023 at 07:51 PM
+-- Generation Time: Mar 20, 2023 at 01:41 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -71,6 +71,13 @@ CREATE TABLE `categories` (
   `category_title` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`category_id`, `category_title`) VALUES
+(1, 'fruits');
+
 -- --------------------------------------------------------
 
 --
@@ -78,12 +85,18 @@ CREATE TABLE `categories` (
 --
 
 CREATE TABLE `products` (
-  `id` int(6) NOT NULL,
-  `producttype` varchar(100) NOT NULL,
-  `productname` varchar(100) NOT NULL,
-  `productmodel` varchar(100) NOT NULL,
-  `quantity` int(255) NOT NULL,
-  `productimage` text NOT NULL
+  `product_id` int(11) NOT NULL,
+  `product_title` varchar(100) NOT NULL,
+  `product_description` varchar(255) NOT NULL,
+  `product_keywords` varchar(255) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `product_image1` varchar(255) NOT NULL,
+  `product_image2` varchar(255) NOT NULL,
+  `product_image3` varchar(255) NOT NULL,
+  `product_price` varchar(100) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -112,7 +125,7 @@ ALTER TABLE `categories`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -134,13 +147,13 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

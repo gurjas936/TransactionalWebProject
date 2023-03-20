@@ -62,7 +62,7 @@
         <div class="col-md-12 bg-secondary p-1 d-flex align-items-center">
             <div class="p-3">
 
-              <a href="#"><img src="../images/iphone.jpg" alt="" class="admin_image"</a>
+              <a href="#"><img src="../images/iphone.jpg" alt="" class="admin_image"></a>
 
               <p class="text-light text-center">Admin Name</p>
 
@@ -71,10 +71,10 @@
             <!-------------------------------->
             <div class="button text-center">
 
-              <button class="my-3"><a href="" class="nav-link text-light bg-info my-1">Insert Products</a></button>
+              <button class="my-3"><a href="insert_products.php" class="nav-link text-light bg-info my-1">Insert Products</a></button>
               <button><a href="" class="nav-link text-light bg-info my-1">View Products</a></button>
               <button><a href="index.php?insert_category" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
-              <button><a href="" class="nav-link text-light bg-info my-1">View Categories</a></button>
+              <button><a href="" class="nav-link text-light  bg-info my-1">View Categories</a></button>
               <button><a href="index.php?insert_brands" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
               <button><a href="" class="nav-link text-light bg-info my-1">View Brands</a></button>
               <button><a href="" class="nav-link text-light bg-info my-1">All Orders</a></button>

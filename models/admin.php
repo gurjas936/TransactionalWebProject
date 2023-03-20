@@ -105,14 +105,36 @@ class Admin
     $select_categories="SELECT * from `categories`";
     $result_categories=mysqli_query($this->con, $select_categories);
     while($row_data=mysqli_fetch_assoc($result_categories)){
-      $category_title=$row_data['brand_title'];
-      $category_id=$row_data['brand_id'];
+      $category_title=$row_data['category_title'];
+      $category_id=$row_data['category_id'];
 
     echo  "<li class='nav-item'>
           <a href='index.php?brand=$category_id' class='nav-link text-light'>$category_title</a>
           </li>";
 
-}
+    }
+  }
+
+  public function selectCategories(){
+        $select_query="SELECT * from `categories`";
+        $result_query=mysqli_query($this->con, $select_query);
+        while($row=mysqli_fetch_assoc($result_query)){
+          $category_title=$row['category_title'];
+          $category_id=$row['category_id'];
+          echo "<option value='$category_id'>$category_title</option>";
+        }
+
+  }
+
+   public function selectBrands(){
+        $select_query="SELECT * from `brands`";
+        $result_query=mysqli_query($this->con, $select_query);
+        while($row=mysqli_fetch_assoc($result_query)){
+          $brand_title=$row['brand_title'];
+          $brand_id=$row['brand_id'];
+          echo "<option value='$brand_id'>$brand_title</option>";
+        }
+
   }
 
 
