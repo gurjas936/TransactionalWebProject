@@ -1,5 +1,5 @@
 <?php
-	include('./../../models/admin.php');
+	include('./../models/admin.php');
 	$adminObj = new Admin();
 
 ?>
