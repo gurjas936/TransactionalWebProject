@@ -18,7 +18,7 @@
 
 <!--css file-->
 
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="./style.css">
 <style>
     .footer{
     position:absolute;
