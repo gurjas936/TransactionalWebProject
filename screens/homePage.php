@@ -1,7 +1,14 @@
 <?php
 include('./models/admin.php');
+         $adminObj = new Admin();
 
 $name = $_GET["name"];
+// $product_title = $_GET['product_title'];
+// $product_description = $_GET['product_description'];
+// $product_keywords = $_GET['product_keywords'];
+// $category_id = $_GET['category_id'];
+// $brand_id = $_GET['brand_id'];
+// $product_image1 = $_GET['product_image1'];
 
  ?>
 
@@ -30,75 +37,32 @@ $name = $_GET["name"];
   <div class="col-md-10 ">
    <!--products-->
    <div class="row">
-    <div class="col-md-4 mb-2">
-    <div class="card">
-  <img src="./images/headphone.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-info">Add to cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-  </div>
-</div>
-    </div>
-    <div class="col-md-4 mb-2">
-    <div class="card">
-  <img src="./images/iphone.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-info">Add to cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-  </div>
-</div>
-    </div>
-    <div class="col-md-4 mb-2">
-    <div class="card">
-  <img src="./images/laptop.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-info">Add to cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-  </div>
-</div>
-    </div>
-    <div class="col-md-4 mb-2">
-    <div class="card">
-  <img src="./images/tablet.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-info">Add to cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-  </div>
-</div>
-    </div>
-    <div class="col-md-4 mb-2">
-    <div class="card">
-  <img src="./images/watch.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-info">Add to cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-  </div>
-</div>
-    </div>
-    <div class="col-md-4 mb-2">
-    <div class="card">
-  <img src="./images/drone.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-info">Add to cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-  </div>
-</div>
-    </div>
-   </div>
+ <?php
 
-
+        $select_query="SELECT * FROM `products`";
+        $result_query=mysqli_query($adminObj->con, $select_query);
+       
+        while($row=mysqli_fetch_assoc($result_query)){
+            $product_title=$row['product_title'];
+            $product_description=$row['product_description'];
+            $product_keywords=$row['product_keywords'];
+            $category_id=$row['category_id'];
+            $brand_id=$row['brand_id'];
+            $product_image1=$row['product_image1'];
+            echo "<div class='col-md-4 mb-2'>
+              <div class='card'>
+                <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt='...'>
+                  <div class='card-body'>
+                    <h5 class='card-title'>$product_title</h5>
+                    <p class='card-text'>$product_description</p>
+                    <a href='#' class='btn btn-info'>Add to cart</a>
+                    <a href='#' class='btn btn-secondary'>View More</a>
+                  </div>
+              </div>
+            </div>";
+        }
+    ?>
+    </div>
   </div>
   <div class="col-md-2 bg-secondary p-0 justify-content-end">
 <!--side nav-->
@@ -111,7 +75,6 @@ $name = $_GET["name"];
 
        <div class="container">
          <?php
-         $adminObj = new Admin();
 
             $adminObj->displayBrands();
 
@@ -130,7 +93,6 @@ $name = $_GET["name"];
 
   <div class="container">
     <?php
-    $adminObj = new Admin();
 
        $adminObj->displayCategories();
 

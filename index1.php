@@ -47,10 +47,13 @@
                 {
                     $page = $_GET['page'];
                     $name = $_GET['name'];
+                    $result_query= $_GET['result_query'];
+                    
                     switch ($page) {
                         case 'home':
                             # code...
                             include_once('./screens/homePage.php?name=' . $name);
+
                             break;
                         case 'about':
                             # code...
@@ -64,6 +67,16 @@
                             # code...
                             include_once('./views/customers.php');
                             break;
+                        // case 'details':
+                        //     # code...
+                        //     include_once('./screens/homePage.php?product_title=' . urlencode($product_title) . 
+                        //         '&product_description=' . urlencode($product_description) . 
+                        //         '&product_keywords=' . urlencode($product_keywords) .
+                        //         '&category_id=' . urlencode($category_id) . 
+                        //         '&brand_id=' . urlencode($brand_id) . 
+                        //         '&product_image1=' . urlencode($product_image1) . '&name=' . $name);
+                        //     break;
+
                         default:
                             # code...
                             echo "<h4 style='text-align:center; color:red'>404: Oops page not found...</h4>";

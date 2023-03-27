@@ -7,6 +7,7 @@ class Admin
 	private $password = '';
 	private $database = 'project';
 	public $con;
+  public $name = "";
 
 	//member functions
 
@@ -26,10 +27,12 @@ class Admin
 
 	public function checkCredentials($post){
 
+
+
 		$username = $_POST['username'];
 		$password = $_POST['password'];
     $found = false;
-    $name = "";
+    
 		$query = "SELECT * FROM admin WHERE username='" . $username . "' AND
     password='" . $password . "' ";
 
@@ -38,12 +41,13 @@ class Admin
 
      if($num > 0) {
          $row = mysqli_fetch_array($sql);
-         echo "helloo";
+         echo "oyee";
              $found = true;
              $name = $row["firstName"];
      }
      if ($found) {
        header("location:index1.php?name="  . urlencode($name));
+
      }
      else {
        echo "no records";
@@ -171,12 +175,12 @@ class Admin
 
 
   }else{
-            move_uploaded_file($temp_image1,"./product_images/product_image1");
-            move_uploaded_file($temp_image2,"./product_images/product_image2");
-            move_uploaded_file($temp_image3,"./product_images/product_image3");
+            move_uploaded_file($temp_image1,"./product_images/$product_image1");
+            move_uploaded_file($temp_image2,"./product_images/$product_image2");
+            move_uploaded_file($temp_image3,"./product_images/$product_image3");
 
             //insert query
-            $insert_products="INSERT INTO `products` (product_title,product_description,product_keywords,category_id,brand_id,
+            $insert_products="INSERT INTO products (product_title,product_description,product_keywords,category_id,brand_id,
             product_image1,product_image2,product_image3,product_price,date,status)VALUES('$product_title','$description',
             '$product_keywords','$product_category','$product_brands','$product_image1','$product_image2','$product_image3',
             '$product_price', NOW(),'$product_status')";
@@ -186,6 +190,33 @@ class Admin
             }
         }
   }
+
+
+
+
+
+  // public function getproducts(){
+
+  //     $select_query="SELECT * from `products`";
+  //       $result_query=mysqli_query($this->con, $select_query);
+  //       while($row=mysqli_fetch_assoc($result_query)){
+  //         $product_title=$row['product_title'];
+  //         $product_description=$row['product_description'];
+  //         $product_keywords=$row['product_keywords'];
+  //         $category_id=$row['category_id'];
+  //         $brand_id=$row['brand_id'];
+  //         $product_image1=$row['product_image1'];
+
+  //         header("Location:index1.php?page=details"."&product_title=" . urlencode($product_title) . 
+  //                 "&product_description=" . urlencode($product_description) . 
+  //                 "&product_keywords=" . urlencode($product_keywords) . 
+  //                 "&category_id=" . urlencode($category_id) . 
+  //                 "&brand_id=" . urlencode($brand_id) . 
+  //                 "&product_image1=" . urlencode($product_image1) . "&name="  . urlencode($name));
+
+
+  //       }
+  // }
 }
 
 
