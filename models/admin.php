@@ -22,7 +22,7 @@ class Admin
 		else{
 			return $this->con;
 		}
-  }
+  } 
 
 
 	public function checkCredentials($post){
@@ -99,7 +99,7 @@ class Admin
       $brand_id=$row_data['brand_id'];
 
     echo  "<li class='nav-item'>
-          <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
+          <a href='index1.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
           </li>";
 
 }
@@ -114,7 +114,7 @@ class Admin
       $category_id=$row_data['category_id'];
 
     echo  "<li class='nav-item'>
-          <a href='index.php?brand=$category_id' class='nav-link text-light'>$category_title</a>
+          <a href='index1.php?brand=$category_id' class='nav-link text-light'>$category_title</a>
           </li>";
 
     }
