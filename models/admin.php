@@ -114,7 +114,7 @@ class Admin
       $category_id=$row_data['category_id'];
 
     echo  "<li class='nav-item'>
-          <a href='index1.php?brand=$category_id' class='nav-link text-light'>$category_title</a>
+          <a href='index1.php?category=$category_id' class='nav-link text-light'>$category_title</a>
           </li>";
 
     }
