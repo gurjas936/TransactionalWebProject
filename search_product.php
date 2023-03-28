@@ -40,6 +40,8 @@ $name = $_GET['name'];
    <!--products-->
    <div class="row">
  <?php
+ 
+ //getproducts();
  search_product();
  get_unique_categories();
  get_unique_brands();

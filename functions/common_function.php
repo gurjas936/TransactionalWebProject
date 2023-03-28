@@ -155,16 +155,19 @@ if(isset($_GET['brand'])){
 function search_product(){
   
 global $con;
+
        
          if(isset($GET['search_data_product'])){
 
          $search_data_value=$_GET['search_data'];
-
+             
         $search_query="Select * from 'products' where product_keywords like '%$search_data_value%'";
         
         $result_query=mysqli_query($con, $search_query);
         $num_of_rows=mysqli_num_rows($result_query);
+        echo '$num_of_rows rrrrrrrrr';
         if($num_of_rows==0){
+          
           echo "<h2 class='text-center text-danger'>No results match</h2>";
 
         }

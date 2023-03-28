@@ -42,8 +42,11 @@
                 # inlude content here
                 if(!(isset($_GET['page']))){
                     include_once('./screens/homePage.php');
+                    //include_once('search_product.php');
                 }
                 else
+               
+            
                 {
                     $page = $_GET['page'];
                     $name = $_GET['name'];
@@ -55,6 +58,11 @@
                             include_once('./screens/homePage.php?name=' . $name);
 
                             break;
+
+                        case 'search':
+                            include_once('./search_product.php');
+                            break;
+
                         case 'about':
                             # code...
                             include_once('./views/about.php');
